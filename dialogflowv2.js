@@ -51,11 +51,13 @@ module.exports = function(RED) {
             text: msg.payload,
             languageCode: language.toLowerCase()
           }
-        },
-	queryParams: {
-	   contexts: [ msg.context]
-	}
+        }
       };
+	if(msg.context != null){
+	request.queryParams= {
+	   contexts: msg.contexts
+	};
+	}
 	console.log("Sending to dialogflow ", request);
       var body = null;
 	  
