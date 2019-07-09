@@ -53,7 +53,7 @@ module.exports = function(RED) {
           }
         }
       };
-	if(msg.context != null){
+	if(msg.contexts != null){
 	request.queryParams= {
 	   contexts: msg.contexts
 	};
