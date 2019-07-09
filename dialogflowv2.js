@@ -54,10 +54,9 @@ module.exports = function(RED) {
         },
 	queryParams: {
 	   contexts: [ msg.context]
-	},
-	query
+	}
       };
-
+	console.log("Sending to dialogflow ", request);
       var body = null;
 	  
 	  function start (key, value) {
@@ -82,7 +81,9 @@ module.exports = function(RED) {
         })
         .then(function() {
           //Result output
-          msg._dialogflow = body[0].queryResult;
+          msg._dialogflow = body[0].
+	  
+	  Result;
           if (debug) {
             lcd.node(msg.payload, { node: node, title: 'Dialogflow-V2.com' });
           }
