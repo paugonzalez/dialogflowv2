@@ -51,7 +51,11 @@ module.exports = function(RED) {
             text: msg.payload,
             languageCode: language.toLowerCase()
           }
-        }
+        },
+	queryParams: {
+	   contexts: [ msg.context]
+	},
+	query
       };
 
       var body = null;
